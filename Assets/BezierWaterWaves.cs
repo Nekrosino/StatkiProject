@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class BezierWaterWaves : MonoBehaviour
-{
+{   
+    
     public float waveHeight = 0.5f;
     public float waveSpeed = 1f;
     public float waveLength = 2f;
@@ -11,6 +12,7 @@ public class BezierWaterWaves : MonoBehaviour
     private MeshFilter meshFilter;
     private Vector3[] baseVertices;
     private Vector3[] displacedVertices;
+    private MeshCollider meshCollider;
 
     void Start()
     {
@@ -18,6 +20,13 @@ public class BezierWaterWaves : MonoBehaviour
         Mesh mesh = meshFilter.mesh;
         baseVertices = mesh.vertices;
         displacedVertices = new Vector3[baseVertices.Length];
+
+        // Dodaj MeshCollider do obiektu
+        meshCollider = GetComponent<MeshCollider>();
+        if (meshCollider == null)
+        {
+            meshCollider = gameObject.AddComponent<MeshCollider>();
+        }
     }
 
     void Update()
@@ -41,7 +50,14 @@ public class BezierWaterWaves : MonoBehaviour
             displacedVertices[i] = vertex;
         }
 
+        // Update mesh vertices and normals
         meshFilter.mesh.vertices = displacedVertices;
         meshFilter.mesh.RecalculateNormals();
+
+        // Update MeshCollider with the modified mesh
+        meshCollider.sharedMesh = null; // Usuwamy mesh tymczasowo, aby go zaktualizowaæ
+        meshCollider.sharedMesh = meshFilter.mesh; // Ustawiamy zaktualizowany mesh
     }
+    
 }
+
