@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/stylesheet.uss?fileID=7433441132597879392&amp;guid=1a66d046dee049047886143f92d60608&amp;type=3#stylesheet" />
+    <ui:VisualElement name="Background" style="flex-grow: 1; align-self: auto; justify-content: flex-start; align-items: stretch; background-image: resource(&apos;img/statkiBackground&apos;); -unity-background-scale-mode: scale-and-crop;">
+        <ui:VisualElement name="TopPanel" style="flex-grow: 0; height: 157px; flex-shrink: 1; justify-content: center; align-self: stretch;">
+            <ui:Label tabindex="-1" text="Statki" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GameTitle" style="align-items: stretch; align-self: center; font-size: 60px; justify-content: center; -unity-font: resource(&apos;fonts/AWAKENNING Personal Use&apos;); -unity-font-definition: resource(&apos;fonts/AWAKENNING STEEL Personal Use SDF&apos;); letter-spacing: 15px;" />
+            <ui:Label tabindex="-1" text="Projekt Zespolowy" parse-escape-sequences="true" display-tooltip-when-elided="true" name="GameTitle" style="align-items: stretch; align-self: center; font-size: 32px; justify-content: center; -unity-font: resource(&apos;fonts/AWAKENNING Personal Use&apos;); -unity-font-definition: resource(&apos;fonts/AWAKENNING Personal Use SDF&apos;); letter-spacing: 15px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="BottomPanel" style="flex-grow: 1; justify-content: center;">
+            <ui:Button text="Rozpocznij grę" parse-escape-sequences="true" display-tooltip-when-elided="true" name="StartButton" class="menuButton" style="justify-content: flex-start; align-self: center;" />
+            <ui:Button text="Wyjdź z gry" parse-escape-sequences="true" display-tooltip-when-elided="true" name="QuitButton" class="menuButton" style="align-self: center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
